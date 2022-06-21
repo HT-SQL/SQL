@@ -1,0 +1,32 @@
+#In this SQL, I'm querying a database with two tables in it to quantify statistics about songs and artists. 
+
+#1. What are all the song titles?
+SELECT title 
+FROM songs;
+
+#2. Which title of the songs have an 'epic' mood or a release date after 1990?
+SELECT title 
+FROM songs 
+WHERE (mood = "epic" OR released > 1990);
+
+#3. Which title of songs are 'epic', and released after 1990, and less than 4 minutes long?
+SELECT title 
+FROM songs 
+WHERE mood = "epic" 
+AND released > 1990 
+AND duration < 240;
+
+#4. Which title of songs are by the artist named 'Queen'?
+SELECT title 
+FROM songs 
+WHERE artist = "Queen";
+
+#5. What are the names of all of the artists from the 'Pop' genre?
+SELECT name 
+FROM artists 
+WHERE genre = "Pop";
+
+#6. What are the titles of all the songs from the 'Pop' artists?
+SELECT title 
+FROM songs 
+WHERE artist IN (SELECT name FROM artists WHERE genre = "Pop");
