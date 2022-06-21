@@ -1,10 +1,10 @@
-#In this SQL, I'm querying a database with two tables in it to quantify statistics about people and their hobbies. 
+#In this SQL, I'm querying a database with multiple tables in it to quantify statistics about people and their hobbies. 
 
 #1. Insert one more row in persons and then one more row in hobbies that is related to the newly inserted person.
 INSERT INTO persons (name,age) VALUES ("Echo", 2);
 INSERT INTO hobbies (person_id, name) VALUES (5, "barking");
 
-#2. Select the 2 tables with a join so that you can see each person's name next to their hobby.
+#2. Display a table showing people's names with their hobbies.
 SELECT p.name, h.name
 FROM persons AS p
 JOIN hobbies AS h
@@ -16,3 +16,11 @@ FROM persons AS p
 JOIN hobbies AS h
 ON p.id = h.person_id
 WHERE p.name = "Bobby McBobbyFace";
+
+#4. Show the names of each pair of friends, based on the data in the friends table.
+SELECT a.name, b.name
+FROM friends
+JOIN persons AS a
+ON a.id = friends.person1_id
+JOIN persons AS b
+ON b.id = friends.person2_id;
