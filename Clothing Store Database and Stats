@@ -1,0 +1,33 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, color TEXT);
+
+INSERT INTO store VALUES (1, "shirt", 10, 50, "white");
+INSERT INTO store VALUES (2, "sweater", 20, 30, "black");
+INSERT INTO store VALUES (3, "jacket", 25, 40, "olive");
+INSERT INTO store VALUES (4, "shorts", 15, 40, "black");
+INSERT INTO store VALUES (5, "jeans", 30, 50, "blue");
+INSERT INTO store VALUES (6, "pants", 25, 30, "brown");
+INSERT INTO store VALUES (7, "socks", 5, 40, "black");
+INSERT INTO store VALUES (8, "shoes", 30, 50, "white");
+INSERT INTO store VALUES (9, "boots", 40, 40, "black");
+INSERT INTO store VALUES (10, "earrings", 10, 30, "gold");
+INSERT INTO store VALUES (11, "ring", 5, 20, "silver");
+INSERT INTO store VALUES (12, "braclet", 10, 30, "gold");
+INSERT INTO store VALUES (13, "hat", 15, 20, "brown");
+INSERT INTO store VALUES (14, "beanie", 15, 20, "blue");
+INSERT INTO store VALUES (15, "scarf", 10, 20, "white");
+
+--display the database ordered by price. 
+SELECT * FROM store 
+ORDER BY price DESC;
+
+--what is the average price of items that are white?
+SELECT AVG(price) 
+FROM store 
+WHERE color = "white";
+
+--what items are $20 or below and black?
+SELECT item, price, color FROM store
+WHERE price <= 20 AND color = "black" 
+ORDER BY price DESC;
