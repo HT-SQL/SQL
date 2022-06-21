@@ -1,0 +1,18 @@
+#In this SQL, I'm querying a database with two tables in it to quantify statistics about people and their hobbies. 
+
+#1. Insert one more row in persons and then one more row in hobbies that is related to the newly inserted person.
+INSERT INTO persons (name,age) VALUES ("Echo", 2);
+INSERT INTO hobbies (person_id, name) VALUES (5, "barking");
+
+#2. Select the 2 tables with a join so that you can see each person's name next to their hobby.
+SELECT p.name, h.name
+FROM persons AS p
+JOIN hobbies AS h
+ON p.id = h.person_id;
+
+#3. Add an additional query that shows only the name and hobbies of 'Bobby McBobbyFace'.
+SELECT p.name, h.name
+FROM persons AS p
+JOIN hobbies AS h
+ON p.id = h.person_id
+WHERE p.name = "Bobby McBobbyFace";
