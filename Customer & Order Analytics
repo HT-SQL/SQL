@@ -1,0 +1,16 @@
+#In this SQL, I'm querying a database with two tables in it to quantify statistics about customer and order data. 
+
+#1. List the name and email of every customer followed by the item and price of orders they've made.
+SELECT c.name, c.email, o.item, o.price
+FROM customers AS c
+LEFT OUTER JOIN orders AS o
+ON c.id = o.customer_id;
+
+#2. Create another query that will result in one row per each customer, with their name, email, and total amount of money
+they've spent on orders. Sort the rows according to the total money spent, from the most spent to the least spent.
+SELECT c.name, c.email, SUM(o.price) AS spent
+FROM customers AS c
+LEFT OUTER JOIN orders AS o
+ON c.id = o.customer_id
+GROUP BY c.name
+ORDER BY spent DESC;
