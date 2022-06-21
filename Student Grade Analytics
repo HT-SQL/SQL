@@ -1,0 +1,19 @@
+#In this SQL, I'm querying a database with one table in it to quantify statistics about student grades. 
+
+#1. Select all of the rows, and display the name, number_grade, and percent_completed, which you can compute by 
+multiplying and rounding the fraction_completed column.
+SELECT name, number_grade, 
+ROUND(fraction_completed * 100) AS percent_completed 
+FROM student_grades;
+
+#2. How many students have earned which letter_grade? The number_grade column should output 'A' for grades > 90, 
+'B' for grades > 80, 'C' for grades > 70, and 'F' otherwise. 
+SELECT COUNT(*),
+CASE
+    WHEN number_grade > 90 THEN "A"
+    WHEN number_grade > 80 THEN "B"
+    WHEN number_grade > 70 THEN "C"
+    ELSE "F"
+END AS letter_grade
+FROM student_grades
+GROUP BY letter_grade;
