@@ -164,4 +164,11 @@ JOIN chinook.playlists AS l
 ON p.playlistid = l.playlistid
 WHERE l.name = "Music";
 
+#19. Which country has the most invoices
+
+SELECT COUNT(*), billingcountry
+FROM chinook.invoices
+GROUP BY billingcountry
+ORDER BY COUNT(*) DESC
+LIMIT 1;
 
