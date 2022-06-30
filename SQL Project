@@ -172,3 +172,11 @@ GROUP BY billingcountry
 ORDER BY COUNT(*) DESC
 LIMIT 1;
 
+#20. How many customers are from the USA, Canada, and the United Kingdom
+
+SELECT COUNT(*), country 
+FROM chinook.customers 
+WHERE country IN ("USA", "Canada", "United Kingdom") 
+GROUP BY country;
+
+
