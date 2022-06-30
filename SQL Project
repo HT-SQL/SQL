@@ -153,3 +153,10 @@ ON a.albumid = t.albumid
 JOIN chinook.genres AS g
 ON t.genreid = g.genreid
 WHERE g.name IN ("Pop", "R&B/Soul");
+
+#18. How many customers live in the USA
+
+SELECT COUNT(*)
+FROM chinook.customers
+WHERE country = "USA";
+
