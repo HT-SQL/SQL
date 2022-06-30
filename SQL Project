@@ -142,3 +142,14 @@ GROUP BY art.name
 ORDER BY ROUND(SUM(i.total),2) DESC
 LIMIT 1;
 
+#17. List the name of artists that make Pop or R&B/Soul music
+
+SELECT DISTINCT art.name AS 'Artist Name'
+FROM chinook.artists AS art
+JOIN chinook.albums AS a
+ON art.artistid = a.artistid
+JOIN chinook.tracks AS t
+ON a.albumid = t.albumid
+JOIN chinook.genres AS g
+ON t.genreid = g.genreid
+WHERE g.name IN ("Pop", "R&B/Soul");
