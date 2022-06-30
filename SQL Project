@@ -154,5 +154,14 @@ JOIN chinook.genres AS g
 ON t.genreid = g.genreid
 WHERE g.name IN ("Pop", "R&B/Soul");
 
+#18. List the name of the tracks and composers in the playlist called Music
+
+SELECT t.name, t.composer
+FROM chinook.tracks AS t
+JOIN chinook.playlist_track AS p
+ON t.trackid = p.trackid
+JOIN chinook.playlists AS l
+ON p.playlistid = l.playlistid
+WHERE l.name = "Music";
 
 
