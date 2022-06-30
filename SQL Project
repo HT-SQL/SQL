@@ -24,7 +24,7 @@ WHERE i.billingcountry = "Brazil";
 #4. Show the Employees who are Sales Agents.
 
 SELECT * FROM chinook.employees
-WHERE title = "Sales Support Agent"
+WHERE title = "Sales Support Agent";
 
 #5. Find a unique/distinct list of billing countries from the Invoice table.
 
@@ -78,7 +78,7 @@ ON i.trackid = t.trackid
 JOIN chinook.albums AS a 
 ON t.albumid = a.albumid 
 JOIN chinook.artists AS art 
-ON a.artistid = art.artistid
+ON a.artistid = art.artistid;
 
 #12. Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
 
