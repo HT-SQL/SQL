@@ -1,4 +1,4 @@
-#In this SQL, I'm querying a database with two tables in it to quantify statistics about Neflix data. 
+#In this SQL, I'm querying a database with two tables in it to quantify statistics about Netflix data. 
 
 #1. How many movie titles are there in the database?
 SELECT COUNT(title) 
